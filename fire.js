@@ -5,6 +5,7 @@ var ctx = canvas.getContext("2d");
 ocas.width = canvas.width = window.innerWidth;
 ocas.height = canvas.height = window.innerHeight;
 var bigbooms = [];
+var pos = 0;
 
 // window.onload = function() {
 //     initAnimate();
@@ -32,7 +33,7 @@ function animate() {
     ctx.restore();
     var newTime = new Date();
     if (newTime - lastTime > 500 + (window.innerHeight - 767) / 2) {
-        var random = Math.random() * 100 > 33 ? true : false;
+        var random = Math.random() * 100 > 20 ? true : false;
         var x = getRandom(canvas.width / 5, canvas.width * 4 / 5);
         var y = getRandom(50, 200);
         if (random) {
@@ -42,15 +43,20 @@ function animate() {
             });
             bigbooms.push(bigboom)
         } else {
+            if(pos >= document.querySelectorAll(".shape").length) {
+                pos = 0;
+            }
+            // console.log(document.querySelectorAll(".shape")[parseInt(pos)]);
             var bigboom = new Boom(getRandom(canvas.width / 3, canvas.width * 2 / 3), 2, "#FFF", {
                     x: canvas.width / 2,
                     y: 200
                 },
-                document.querySelectorAll(".shape")[parseInt(getRandom(0, document.querySelectorAll(".shape").length))]);
-            bigbooms.push(bigboom)
+                document.querySelectorAll(".shape")[parseInt(pos)]);
+            bigbooms.push(bigboom);
+            pos++;
         }
         lastTime = newTime;
-        console.log(bigbooms)
+        // console.log(bigbooms)
     }
     stars.foreach(function() {
         this.paint()
@@ -228,7 +234,7 @@ function putValue(canvas, context, ele, dr, callback) {
     } else {
         var text = ele.innerHTML;
         context.save();
-        var fontSize = 100;
+        var fontSize = 60;
         context.font = fontSize + "px 宋体 bold";
         context.textAlign = "center";
         context.textBaseline = "middle";
@@ -303,7 +309,7 @@ Star.prototype = {
         ctx.restore()
     }
 };
-var focallength = 250;
+var focallength = 200;
 var Frag = function(centerX, centerY, radius, color, tx, ty) {
     this.tx = tx;
     this.ty = ty;
