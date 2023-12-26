@@ -33,7 +33,7 @@ function animate() {
     ctx.restore();
     var newTime = new Date();
     if (newTime - lastTime > 500 + (window.innerHeight - 767) / 2) {
-        var random = Math.random() * 100 > 20 ? true : false;
+        var random = Math.random() * 100 > 40 ? true : false;
         var x = getRandom(canvas.width / 5, canvas.width * 4 / 5);
         var y = getRandom(50, 200);
         if (random) {
