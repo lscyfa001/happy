@@ -1,0 +1,111 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-12-21 09:07:44
+ * @LastEditTime: 2020-12-23 09:11:59
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \firework-master\酷炫表白烟花\fire.html
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      id="jqbb"
+      src="https://libs.baidu.com/jquery/1.11.1/jquery.min.js"
+    ></script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: black;
+        user-select: none;
+        margin: 0;
+      }
+
+      .city {
+        width: 100%;
+        position: fixed;
+        bottom: 0px;
+        z-index: 100;
+      }
+
+      .city img {
+        width: 100%;
+      }
+
+      audio {
+        opacity: 0;
+      }
+    </style>
+    <title>专属林小鱼的烟花</title>
+    <!-- 弹窗样式 -->
+    <link href="modal.css" rel="stylesheet" />
+  </head>
+
+  <body onselectstart="return false">
+    <div class="star comet"></div>
+    <script src="js/index.js"></script>
+
+    <!--对话部分-->
+    <div class="share_img">
+        <img src="img/xin.png" alt="" />
+    </div>
+    <div class="page_one">
+      <div class="content">
+        <div class="text_wrapper" style="transform: translateY(-40px);">
+          <!-- <img class="xin" src="img/xin.png" alt="" /> -->
+          <div class="text">林小鱼，您有一份生日邮件，请注意查收哦~</div>
+        </div>
+      </div>
+      <div class="btn-groups">
+        <div class="heart-btn">
+          <div id="yes" class="btn btn-a"><span>查收</span></div>
+        </div>
+        <div id="no" class="btn btn-b"><span>不查收</span></div>
+      </div>
+    </div>
+    <!--烟花部分-->
+    <canvas id="cas" style="background-color: rgba(0, 5, 24, 1); z-index: 9999">
+      浏览器不支持canvas
+    </canvas>
+    <div class="city">
+      <img src="img/city.png" alt="" />
+    </div>
+    <img src="img/moon.png" alt="" id="moon" style="visibility: hidden" />
+    <div style="display: none">
+      <div class="shape">生日快乐，林小鱼</div>
+      <div class="shape">今天是认识你与你的第一个生日</div>
+      <div class="shape">在这特别的一天我想对你说</div>
+      <div class="shape">很开心你的出现普通男孩</div>
+      <div class="shape">未来很长不论怎样</div>
+      <div class="shape">希望我们一直都能一起过生日</div>
+      <div class="shape">永远的forever</div>
+      <div class="shape">你延后三天我提前三天取中间日子</div>
+      <div class="shape">把那些碎碎念念变成岁岁年年</div>
+      <div class="shape">日子不慌不忙</div>
+      <div class="shape">我们来日方长</div>
+      <div class="shape">眼里有光走哪里都是光</div>
+      <div class="shape">希望大家都是彼此的光</div>
+      <div class="shape">愿你喜乐长安，顺遂无虞</div>
+      <div class="shape">所有美好不期而遇</div>
+      <div class="shape">29岁的小鱼生日快乐</div>
+    </div>
+    <!--音乐部分-->
+    <audio autoplay loop id="music">
+      <source src="./mp3/music.mp3" />
+    </audio>
+    <iframe
+      id="iframMusic"
+      allow="autoplay"
+      style="display: none"
+      src="./mp3/music.mp3"
+    ></iframe>
+    <script src="jquery.min.js"></script>
+    <script src="fire.js"></script>
+    <script src="talk.js"></script>
+  </body>
+</html>
